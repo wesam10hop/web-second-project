@@ -46,3 +46,22 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+li {
+    background: #eee;
+    margin: 8px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.done {
+    text-decoration: line-through;
+    background: #d3ffd3;
+}
+
+li button:nth-of-type(2){
+    color: red;
+    padding: 0.12em 0.5em;
+}
