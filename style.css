@@ -27,3 +27,17 @@ body {
     margin-left: 10px;
     cursor: pointer;
 }
+
+.taps button,  .actions button{
+    margin: 10px 5px;
+    padding: 10px;
+    border: none;
+    background: #0097b2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions button {
+    background: #e74c3c;
+}
