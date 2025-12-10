@@ -10,7 +10,7 @@
 <body>
 
     <main class="container">
-    <h1>To Do Input</h1>
+    <h1>Todo Input</h1>
     <form class="user_input" id="task-form">
       <input type="text" id="new-task" name="task" autocomplete="on" placeholder="New Todo">
       <button type="submit">Add new task</button>
@@ -24,7 +24,13 @@
       <button onclick="filterTasks('todo')">Todo</button>
     </div>
 
-    </main>
+    <ul id="task-list"></ul>
+    <div class="actions">
+      <button onclick="deleteDoneTasks()">Delete Done Tasks</button>
+      <button onclick="deleteAllTasks()">Delete All Tasks</button>
+    </div>
 
+    </main>
+    
 </body>
 </html>
