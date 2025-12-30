@@ -65,4 +65,11 @@ const addTask = () => {
   taskInput.value = "";
   clearError();
 };
+// ------------ Toggle Task Done ------------
+const toggleTask = index => {
+  tasks[index].done = !tasks[index].done;
+  saveTasks();
+  renderTasks();
+};
+
 
