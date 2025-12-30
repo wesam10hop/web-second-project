@@ -10,3 +10,47 @@ const popupCancel = document.getElementById("popup-cancel");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let currentFilter = "all";
+
+const saveTasks = () => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+const renderTasks = () => {
+  taskList.innerHTML = "";
+
+  const filteredTasks = tasks.filter(task => {
+    if (currentFilter === "done") return task.done;
+    if (currentFilter === "todo") return !task.done;
+    return true;
+  });
+
+  filteredTasks.forEach((task, index) => {
+    const li = document.createElement("li");
+    if (task.done) li.classList.add("done");
+
+    li.innerHTML = `
+      <span>${task.name}</span>
+      <div>
+        <button onclick="toggleTask(${index})">âœ”</button>
+        <button onclick="deleteTask(${index})">âœ–</button>
+      </div>
+    `;
+    taskList.appendChild(li);
+  });
+};
+
+const isValidTask = task => {
+  if (!task) return showError("Task cannot be empty.");
+  if (!isNaN(task[0])) return showError("Task cannot start with a number.");
+  if (task.length < 5) return showError("Task must be at least 5 characters.");
+  return true;
+};
+
+const showError = message => {
+  errorMessage.textContent = message;
+  return false;
+};
+
+const clearError = () => {
+  errorMessage.textContent = "";
+};
