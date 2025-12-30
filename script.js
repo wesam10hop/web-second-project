@@ -125,5 +125,10 @@ const showPopup = (message, onConfirm = null) => {
 
   popupCancel.style.display = onConfirm ? "inline-block" : "none";
 };
+// ------------ Event Listeners ------------
+taskForm.addEventListener("submit", e => {
+  e.preventDefault();
+  addTask();
+});
 
 
