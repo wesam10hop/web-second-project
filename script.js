@@ -130,5 +130,7 @@ taskForm.addEventListener("submit", e => {
   e.preventDefault();
   addTask();
 });
+// ------------ Initial Render ------------
+renderTasks();
 
 
