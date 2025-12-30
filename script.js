@@ -109,4 +109,21 @@ const filterTasks = filter => {
   currentFilter = filter;
   renderTasks();
 };
+// ------------ Custom Popup Logic ------------
+const showPopup = (message, onConfirm = null) => {
+  popupMessage.textContent = message;
+  popup.style.display = "flex";
+
+  popupConfirm.onclick = () => {
+    popup.style.display = "none";
+    if (onConfirm) onConfirm();
+  };
+
+  popupCancel.onclick = () => {
+    popup.style.display = "none";
+  };
+
+  popupCancel.style.display = onConfirm ? "inline-block" : "none";
+};
+
 
