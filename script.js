@@ -31,8 +31,8 @@ const renderTasks = () => {
     li.innerHTML = `
       <span>${task.name}</span>
       <div>
-        <button onclick="toggleTask(${index})">âœ”</button>
-        <button onclick="deleteTask(${index})">âœ–</button>
+        <button onclick="toggleTask(${index})">Done</button>
+        <button onclick="deleteTask(${index})">Delete</button>
       </div>
     `;
     taskList.appendChild(li);
