@@ -80,4 +80,16 @@ const deleteTask = index => {
     renderTasks();
   });
 };
+// ------------ Delete All Tasks ------------
+const deleteAllTasks = () => {
+  if (tasks.length === 0) {
+    showPopup("No tasks to delete.");
+    return;
+  }
+  showPopup("Are you sure you want to delete all tasks?", () => {
+    tasks = [];
+    saveTasks();
+    renderTasks();
+  });
+};
 
