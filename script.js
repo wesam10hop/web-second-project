@@ -72,4 +72,12 @@ const toggleTask = index => {
   renderTasks();
 };
 
+// ------------ Delete Task ------------
+const deleteTask = index => {
+  showPopup("Do you want to delete this task?", () => {
+    tasks.splice(index, 1);
+    saveTasks();
+    renderTasks();
+  });
+};
 
